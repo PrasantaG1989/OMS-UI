@@ -5,25 +5,29 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 // import App, {loader as appLoader} from './App';
 import {action as returnAction} from './app/return-form/return-form';
 import App from './app/app';
-
+import AddNewReturnForm, {action as newReturnAction} from './app/add-new-return-form/add-new-return-form';
+import MscSummary from "./app/msc-summary/msc-summary";
+import ErrorPage from "@monorepo-react/common-ui";
 const route = createBrowserRouter([
-  /*{
-    path:'/',
-    element: <App/>,
-    loader: appLoader,
-    children:[
-      {
-        path:'add',
-        element: <ReturnForm />,
-        action: returnAction
-      }
-    ]
-
-  },*/
   {
     path:'/',
     element: <App/>,
-    action: returnAction
+    children:[
+      { index: true, 
+        element: <MscSummary /> ,
+        action: returnAction
+      },
+      {
+        path:"msc",
+        element: <MscSummary/>,
+        action: returnAction,
+      },
+      {
+        path:'return',
+        element: <AddNewReturnForm/>,
+        action: newReturnAction
+      }
+    ]
 
   }
 ])

@@ -101,7 +101,7 @@ export const MscMenuItems: MenuItem[] = [
         src="https://play-lh.googleusercontent.com/gqOziTbVWioRJtHh7OvfOq07NCTcAHKWBYPQKJOZqNcczpOz5hdrnQNY7i2OatJxmuY=w480-h960-rw"
       />
     ),
-    text: <span className="font-bold">MSC</span>
+    text: "MSC"
   },
   {
     text: "Order",

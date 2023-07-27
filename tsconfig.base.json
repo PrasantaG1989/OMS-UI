@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@monorepo-oms-ui/common-ui": ["libs/common-ui/src/index.ts"],
-      "@monorepo-oms-ui/data": ["libs/data/src/index.ts"]
+      "@monorepo-react/common-ui": ["libs/common-ui/src/index.ts"],
+      "@monorepo-react/data": ["libs/data/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

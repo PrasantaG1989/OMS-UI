@@ -15,7 +15,7 @@ export async function action({request, params}) {
   return redirect("/");
 }
 
-export const ReturnForm: React.FC = ({showActionPane, updateActionPane}) => {
+export const ReturnForm: React.FC = ({updateActionPane}) => {
   const [formValues, setFormValues] = useState<ReturnFormValues>({
     orderId: "",
     reason: "",

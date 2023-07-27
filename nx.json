@@ -5,7 +5,7 @@
       "runner": "nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "NDZlY2Y1MzUtYjE3Ny00YzJhLTk3MGQtZWI2ZjUwMWE3YmYwfHJlYWQtd3JpdGU="
+        "accessToken": "ODAxZWU4MmYtMGYyYS00ODg5LWE1NmItNmZlM2Q3NGVmNDUwfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -17,24 +17,26 @@
     "e2e": {
       "inputs": ["default", "^production"]
     },
-    "test": {
-      "inputs": ["default", "^production"]
-    },
     "lint": {
       "inputs": [
         "default",
         "{workspaceRoot}/.eslintrc.json",
         "{workspaceRoot}/.eslintignore"
       ]
+    },
+    "test": {
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     }
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
+      "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/.eslintrc.json"
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/src/test-setup.[jt]s"
     ],
     "sharedGlobals": []
   },
@@ -43,7 +45,7 @@
       "application": {
         "style": "css",
         "linter": "eslint",
-        "bundler": "vite",
+        "bundler": "rspack",
         "babel": true
       },
       "component": {
@@ -52,7 +54,7 @@
       "library": {
         "style": "css",
         "linter": "eslint",
-        "unitTestRunner": "vitest"
+        "unitTestRunner": "jest"
       }
     }
   }

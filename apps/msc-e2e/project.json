@@ -8,7 +8,7 @@
       "executor": "@nx/cypress:cypress",
       "options": {
         "cypressConfig": "apps/msc-e2e/cypress.config.ts",
-        "devServerTarget": "msc:serve:development",
+        "devServerTarget": "msc:serve",
         "testingType": "e2e"
       },
       "configurations": {

@@ -1,6 +1,6 @@
 import styles from './menu-bar.module.css';
-
-import MenuItem from "@monorepo-oms-ui/data";
+import { NavLink, Link } from 'react-router-dom';
+import MenuItem from "@monorepo-react/data";
 
 /* eslint-disable-next-line */
 
@@ -18,10 +18,22 @@ export function MenuBar(props: any) {
           {menuItems.map((p,i) => (
             
             <li key={i} className="flex flex-col items-center opacity-90 py-2 cursor-pointer">
-              {p.icon}
-              <div className="text-xs text-center text-white opacity-60">
-                {p.text}
-              </div>
+              <NavLink
+                    to={`/${p.text}`}
+                    className={({ isActive, isPending }) =>
+                      isActive
+                        ? "active"
+                        : isPending
+                        ? "pending"
+                        : ""
+                    }
+                  >
+                    {p.icon}
+                    <div className="text-xs text-center text-white opacity-60">
+                      {p.text}
+                    </div>
+                  </NavLink>
+              
             </li>
           ))}
         </ul>

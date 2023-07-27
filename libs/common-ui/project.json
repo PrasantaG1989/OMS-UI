@@ -12,28 +12,18 @@
         "lintFilePatterns": ["libs/common-ui/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "outputPath": "dist/libs/common-ui"
+        "jestConfig": "libs/common-ui/jest.config.ts",
+        "passWithNoTests": true
       },
       "configurations": {
-        "development": {
-          "mode": "development"
-        },
-        "production": {
-          "mode": "production"
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
         }
-      }
-    },
-    "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["coverage/libs/common-ui"],
-      "options": {
-        "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/libs/common-ui"
       }
     }
   }
