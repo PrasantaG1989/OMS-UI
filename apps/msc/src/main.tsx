@@ -8,7 +8,8 @@ import App from './app/app';
 import AddNewReturnForm, {action as newReturnAction} from './app/add-new-return-form/add-new-return-form';
 import MscSummary from "./app/msc-summary/msc-summary";
 import ErrorPage from "@monorepo-react/common-ui";
-const route = createBrowserRouter([
+
+export const routeConfig = [
   {
     path:'/',
     element: <App/>,
@@ -30,7 +31,8 @@ const route = createBrowserRouter([
     ]
 
   }
-])
+]
+const route = createBrowserRouter(routeConfig);
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

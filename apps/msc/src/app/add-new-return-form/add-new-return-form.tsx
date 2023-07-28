@@ -5,6 +5,7 @@ import { Form, redirect} from "react-router-dom";
 export interface AddNewReturnFormProps {
   orderId: string;
   reason: string;
+  product_desc: string;
   details: string;
 }
 
@@ -20,7 +21,7 @@ export function AddNewReturnForm() {
   const [formValues, setFormValues] = useState<AddNewReturnFormProps>({
     orderId: "",
     reason: "",
-    product_desc:"",
+    product_desc: "",
     details: ""
   });
 
